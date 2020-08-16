@@ -32,7 +32,7 @@
         animation-fill-mode: both;
         height: 1px;
         background-color: var(--color-secondary);
-       }
+      }
     }
   }
 }
@@ -56,6 +56,13 @@
   @extend .button;
 }
 
+.button-primary-active {
+  @extend .button-primary;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
 .button-secondary {
   @extend .button;
   border: 1px solid var(--color-secondary);
@@ -72,6 +79,12 @@
   }
 }
 
+.button-secondary-active {
+  @extend .button;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+}
 
 .button-group {
   display: flex;

@@ -1,5 +1,5 @@
 .input-wrapper {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
   .input-label {
     color: var(--color-primary);
   }
@@ -39,13 +39,10 @@
 }
 
 .checkbox-wrapper {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
   display: flex;
   align-items: flex-end;
-  
-  & + .checkbox-wrapper {
-    margin-bottom: 0.1rem;
-  }
+  position: relative;
   
   .checkbox-icon {
     transition: 0.25s;

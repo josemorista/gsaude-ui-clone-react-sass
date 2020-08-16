@@ -11,7 +11,7 @@ export interface IButtonProps {
 }
 
 export const Button: React.FC<IButtonProps> = ({type, disabled = false, active = false, onClick = () => {}, children, color='primary', icon}) => {
-  return (<button className={color === 'primary' ? 'button-primary' : 'button-secondary'} type={type} disabled={disabled} onClick={onClick}>
+  return (<button className={color === 'primary' ? `button-primary${active ? '-active' : ''}` : `button-secondary${active ? '-active' : ''}`} type={type} disabled={disabled} onClick={onClick}>
     {icon ? (
       <div className="button-icon">{icon}</div>
     ) : null}
