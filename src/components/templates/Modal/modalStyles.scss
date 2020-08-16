@@ -1,0 +1,65 @@
+@keyframes loadModal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  
+  .modal-title {
+    font-size: 1.5rem;
+    color: var(--color-primary)
+  }
+
+  .modal-content {
+    animation-name: loadModal;
+    animation-fill-mode: backwards;
+    animation-duration: 0.5s;
+    position: relative;
+    background-color: var(--color-background);
+    padding: 1rem;
+    padding-right: 0;
+    width: 90vw;
+    @media (min-width: 1100px) {
+      width: 60vw;
+    }
+  }
+  .modal-close-icon {
+    position: absolute;
+    cursor: pointer;
+    top: -2.6rem;
+    right: 0;
+    font-size: 1.4rem;
+    :first-child {
+      background-color: var(--color-primary);
+      color: var(--color-secondary);
+      transition: opacity 0.25s;
+      &:hover {
+        opacity: 0.95;
+      }
+    }
+  }
+  
+  .modal-body {
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+}

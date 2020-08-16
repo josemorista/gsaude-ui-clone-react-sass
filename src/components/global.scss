@@ -1,0 +1,72 @@
+// Variables
+:root {
+  --color-primary: #345CA4;
+  --color-primary-light: #e8f0fe;
+  --color-secondary: #ffffff;
+  --color-default-light: rgb(184, 181, 181);
+  --color-default: #3b444b;
+  --color-error: #F08080;
+  --color-background: #ffffff;
+  --color-disabled: lightgray;
+
+  // Common form styles
+  .form-text {
+    margin-bottom: 0.7rem;
+  }
+
+  .form-section {
+    display: flex;
+    width: 100%;
+    > button {
+      align-self: flex-end;
+      margin-bottom: 0.7rem;
+      height: 3rem;
+      min-width: 3rem;
+    }
+    flex-wrap: wrap;
+    > * {
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: var(--color-primary);
+};
+
+* {
+  font-size: 100%;
+  font-weight: 300;
+  font-family: Nunito;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  @media (min-width: 1000px) {
+    font-size: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: var(--color-default);
+  b {
+    font-weight: 600;
+  }
+}
+
+ul, li {
+  list-style: none;
+}
+
+button {
+  outline: 0;
+  box-shadow: none;
+  font-weight: 400;
+}

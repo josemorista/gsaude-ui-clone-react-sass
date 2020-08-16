@@ -1,0 +1,122 @@
+.input-wrapper {
+  margin-bottom: 0.7rem;
+  .input-label {
+    color: var(--color-primary);
+  }
+  .input-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    border: 1px solid var(--color-default-light);
+    :disabled {
+      background-color: var(--color-disabled);
+    }
+    .input-icon {
+      font-size: 1.1rem;
+      z-index: 0;
+      color: var(--color-primary);
+      padding: 0 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    &:focus-within {
+      border-color: var(--color-primary);
+      > input {
+        background-color: var(--color-primary-light);
+      }
+    }
+    > input {
+      height: 100%;
+      width: 100%;
+      outline: 0;
+      background-color: transparent;
+      padding: 0 0.5rem;
+      border: 0px;
+    }
+  }
+}
+
+.checkbox-wrapper {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: flex-end;
+  
+  & + .checkbox-wrapper {
+    margin-bottom: 0.1rem;
+  }
+  
+  .checkbox-icon {
+    transition: 0.25s;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary);
+    height: 1.5rem;
+    width: 1.6rem;
+    margin-right: 0.5rem;
+    color: transparent;
+  }
+
+  .checkbox-label {
+    color: var(--color-default);
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.6rem;
+  }
+
+  .checked {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+}
+
+.select-wrapper{
+  cursor: pointer;
+  .select-container {
+    position: relative;
+  }
+  .select-box {
+    border: 1px solid var(--color-primary-light);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    max-height: 200px;
+    overflow: auto;
+    background-color: var(--color-background);
+  }
+
+  .label-option {
+    padding: 12px;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-primary);
+    };
+  }
+}
+
+.input-wrapper-fullwidth {
+  @extend .input-wrapper;
+  width: 100%;
+}
+
+.input-wrapper-medium {
+  @extend .input-wrapper;
+  max-width: 100%;
+  width: 400px;
+}
+
+.input-wrapper-small {
+  @extend .input-wrapper;
+  max-width: 100%;
+  width: 200px;
+}

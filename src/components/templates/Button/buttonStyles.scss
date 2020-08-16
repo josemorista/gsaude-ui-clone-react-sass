@@ -1,0 +1,85 @@
+@keyframes grow {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.button {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: color, background-color 0.5s;
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+    > .button-content {
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation-name: grow;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        height: 1px;
+        background-color: var(--color-secondary);
+       }
+    }
+  }
+}
+
+.button-content {
+  position: relative;
+  display: flex;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  & + .button-content {
+    margin-right: 0.2rem;
+  }
+}
+
+
+.button-primary {
+  @extend .button;
+}
+
+.button-secondary {
+  @extend .button;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  &:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-color: var(--color-secondary);
+    > .button-content {
+      &:after {
+        background-color: var(--color-primary);
+       }
+    }
+  }
+}
+
+
+.button-group {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  > .button {
+    & + .button {
+      border-left: 0px;
+    }
+  }
+}

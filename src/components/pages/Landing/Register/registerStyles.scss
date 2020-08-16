@@ -1,0 +1,50 @@
+.container-register {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 600px) {
+    height: calc(100vh + 7rem);
+  }
+  .header {
+    height: 4.7rem;
+    width: 100%;
+    background-color: var(--color-primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.8rem;
+    > img {
+      cursor: pointer;
+      width: 160px;
+    }
+  }
+
+  .welcome {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    font-size: 1.5rem; 
+  }
+  
+  .switch-form-text {
+    margin-top: 1rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .register-form {
+    margin-top: 6.5rem;
+    margin-bottom: 2rem;
+    width: 400px;
+    max-width: 100%;
+    > button {
+      margin-top: 1.5rem;
+    }
+  }
+}

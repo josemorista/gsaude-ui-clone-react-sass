@@ -1,0 +1,29 @@
+.container-card {
+  @keyframes loadFromUp {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -45%, 0);
+      border-width: 0px;
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      border-width: 0px;
+    }
+  }
+  margin: 1rem 2rem;
+  animation: loadFromUp 0.5s;
+  animation-fill-mode: backwards;
+  border: 1px solid var(--color-primary-light);
+  padding: 1rem;
+  .card-title {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+  }
+  .card-subtitle {
+    font-size: 1rem;
+  }
+  .card-content {
+    margin-top: 1em;
+  }
+}
