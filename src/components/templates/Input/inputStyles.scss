@@ -75,8 +75,11 @@
   }
 }
 
+  .pointer {
+    cursor: pointer;
+  }
+
 .select-wrapper{
-  cursor: pointer;
   .select-container {
     position: relative;
   }

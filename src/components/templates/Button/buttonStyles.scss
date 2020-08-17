@@ -17,10 +17,13 @@
   justify-content: center;
   background-color: transparent;
   transition: color, background-color 0.5s;
-  &:hover {
+  &:disabled {
+    border-color: var(--color-disabled);
+    color: var(--color-disabled);
+  }
+  &:hover:enabled {
     background-color: var(--color-primary);
     color: var(--color-secondary);
-    border-color: var(--color-primary);
     > .button-content {
       &:after {
         content: "";
@@ -67,7 +70,7 @@
   @extend .button;
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
-  &:hover {
+  &:hover:enabled {
     background-color: var(--color-secondary);
     color: var(--color-primary);
     border-color: var(--color-secondary);
@@ -88,6 +91,7 @@
 
 .button-group {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: flex-end;
   > .button {

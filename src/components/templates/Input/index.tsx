@@ -19,11 +19,12 @@ interface IInputFieldProps extends IInputProps{
   autoComplete?: boolean;
   icon?: JSX.Element;
   endIcon?: JSX.Element;
+  onClick?: () => void | Promise<void>;
 }
 
-export const Input : React.FC<IInputFieldProps> = memo(({onChange, value, label = '', placeholder= '', name = '', type= 'text', autoComplete= false, icon, endIcon, size = 'fullwidth', disabled = false}) => {
+export const Input : React.FC<IInputFieldProps> = memo(({onChange, onClick, value, label = '', placeholder= '', name = '', type= 'text', autoComplete= false, icon, endIcon, size = 'fullwidth', disabled = false}) => {
   return (
-    <div className={`input-wrapper-${size}`}>
+    <div className={`input-wrapper-${size}${onClick ? ' pointer' : ''}`} onClick={onClick}>
       <p className="input-label">{label}</p>
       <div className="input-field">
         {icon ? <div className="input-icon">
@@ -93,13 +94,13 @@ export const Select : React.FC<ISelectProps> = memo(({onChange, onSearchChange, 
   };
 
   return (
-    <div ref={selectRef} className={`input-wrapper-${size} select-wrapper`} onClick={() => {
-      if (!disabled) {
-        setOpen(open => !open);
-      }
-    }}>
+    <div ref={selectRef} className={`input-wrapper-${size} select-wrapper`}>
       <div className="select-container">
-        <Input disabled={disabled} icon={icon} endIcon={!open ? <AiOutlineDown /> : <AiOutlineUp />} name={name} label={label} placeholder={placeholder} value={currentLabel} onChange={handleChange} />
+        <Input disabled={disabled} icon={icon} endIcon={!open ? <AiOutlineDown /> : <AiOutlineUp />} name={name} label={label} placeholder={placeholder} value={currentLabel} onChange={handleChange} onClick={() => {
+          if (!disabled) {
+            setOpen(open => !open);
+          }
+        }}/>
         {open ? <div className="select-box">
           {labelOptions.map((option) => (
             <li key={option.value} className="label-option" onClick={(e) => {

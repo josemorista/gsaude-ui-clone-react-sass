@@ -1,0 +1,29 @@
+.stepper-wrapper {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    :first-child {
+      display: flex;
+      align-items: center;
+      margin-right: 0.2rem;
+      color: var(--color-primary);
+      font-size: 1.5rem;
+    }
+  }
+
+  .step-active {
+    @extend .step;
+    > p {
+      text-decoration: underline;
+      color: var(--color-primary);
+    }
+  }
+  
+}
